@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace XayDungUDBanCaPhe
 {
-    internal class DanhSachHĐ
+    internal class DanhSachHoaDon
     {
         private List<QuanLyCTHĐ> dsCTHĐ;
         private List<QuanLyHĐ> dsHD;
