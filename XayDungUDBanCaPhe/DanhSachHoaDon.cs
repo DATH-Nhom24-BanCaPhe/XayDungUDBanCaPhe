@@ -50,8 +50,8 @@ namespace XayDungUDBanCaPhe
             SqlConnection conn = new SqlConnection("Data Source = TRUCLY; Initial Catalog = csdl; Integrated Security = True;");
             conn.Open();
             SqlCommand command = new SqlCommand("SELECT * FROM hoaDon WHERE ngayLapHD between @ngayBD and @ngayKT ", conn);
-            command.Parameters.AddWithValue("@ngayBD", ngayBD);
-            command.Parameters.AddWithValue("@ngayKT", ngayKT);
+            command.Parameters.AddWithValue("@ngayBD", ngayBD.Date);
+            command.Parameters.AddWithValue("@ngayKT", ngayKT.Date);
 
             SqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
