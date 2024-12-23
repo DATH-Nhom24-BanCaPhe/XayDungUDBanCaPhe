@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -13,17 +13,17 @@ namespace XayDungUDBanCaPhe
         private List<QuanLyCTHĐ> dsCTHĐ;
         private List<QuanLyHĐ> dsHD;
         private SqlConnection conn;
-        public DanhSachHĐ(SqlConnection conn)
+        public DanhSachHoaDon(SqlConnection conn)
         {
             this.dsCTHĐ = new List<QuanLyCTHĐ>();
             this.dsHD = new List<QuanLyHĐ>();
             this.conn = conn;
         }
-        public DanhSachHĐ(List<QuanLyHĐ> dsHD)
+        public DanhSachHoaDon(List<QuanLyHĐ> dsHD)
         {
             this.dsHD = dsHD;
         }
-        public DanhSachHĐ(List<QuanLyCTHĐ> dsCTHĐ)
+        public DanhSachHoaDon(List<QuanLyCTHĐ> dsCTHĐ)
         {
             this.dsCTHĐ = dsCTHĐ;
         }
@@ -44,35 +44,6 @@ namespace XayDungUDBanCaPhe
             this.dsHD.Add(hd);
             return true;
         }
-        //public bool Xoa(string maHD)
-        //{
-        //    string query = "delete from hoaDon where maHD=@maHD";
-        //    SqlCommand command = new SqlCommand(query, conn);
-
-        //    command.Parameters.AddWithValue("@maHD", maHD);
-        //    command.ExecuteNonQuery();
-        //    dsHD.RemoveAll(ln => ln.MaHD == maHD);
-        //    return true;
-        //}
-
-        //public bool Sua(QuanLyHĐ hd)
-        //{
-        //    string query = "UPDATE hoaDon SET maNV=@maNV,maHD=@maHD,ngayLapHD=@ngayLapHD,tongTien=@tongTien where maHD=@maHD";
-        //    SqlCommand command = new SqlCommand(query, conn);         
-        //    command.Parameters.AddWithValue("@maHD", hd.MaHD);
-        //    command.Parameters.AddWithValue("@ngayLapHD", hd.NgayLapHoaDon);
-        //    command.Parameters.AddWithValue("@tongTien", hd.TongTien);
-        //    command.Parameters.AddWithValue("@maNV", hd.MaNV);
-        //    command.ExecuteNonQuery();
-
-        //    int index = dsHD.FindIndex(n => n.MaHD == hd.MaHD);
-        //    if (index != -1)
-        //    {
-        //        dsHD[index] = hd;
-        //    }
-        //    return true;
-        //}
-
         public List<QuanLyHĐ> XemHĐ(DateTime ngayBD, DateTime ngayKT)
         {
             List<QuanLyHĐ> kq = new List<QuanLyHĐ>();
