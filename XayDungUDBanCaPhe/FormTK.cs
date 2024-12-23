@@ -289,7 +289,7 @@ namespace XayDungUDBanCaPhe
         {
             DateTime ngayBD = dtNgayBD.Value;
             DateTime ngayKT = dtNgayKT.Value;
-            DanhSachHĐ ds = new DanhSachHĐ(connection);
+            DanhSachHoaDon ds = new DanhSachHoaDon(connection);
             List<QuanLyHĐ> kq = ds.XemHĐ(ngayBD, ngayKT);
             if (kq.Count > 0)
             {
