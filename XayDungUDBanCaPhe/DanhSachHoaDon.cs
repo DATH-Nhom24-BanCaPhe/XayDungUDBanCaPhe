@@ -5,9 +5,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using XayDungUDBanCaPhe;
 
-namespace QuanLyBanCaPhe
+namespace XayDungUDBanCaPhe
 {
     internal class DanhSachHĐ
     {
