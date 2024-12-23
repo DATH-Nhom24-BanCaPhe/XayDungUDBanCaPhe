@@ -163,7 +163,7 @@ namespace XayDungUDBanCaPhe
             double tong = 0; ;
             SqlConnection connection = new SqlConnection(str);
             connection.Open();
-            string query = "select count(maHD) from hoaDon where  ngayLapHD between @ngayBD and @ngayKT";
+            string query = "select sum(tongTien) from hoaDon where  ngayLapHD between @ngayBD and @ngayKT";
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@ngayBD", ngayBD.Date);
             command.Parameters.AddWithValue("@ngayKT", ngayKT.Date);
