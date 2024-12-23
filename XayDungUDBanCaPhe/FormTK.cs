@@ -1,3 +1,4 @@
+using XayDungUDBanCaPhe;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,8 +78,8 @@ namespace XayDungUDBanCaPhe
             connection.Open();
             string query = "select count(maHD)  from hoaDon where  ngayLapHD between @ngayBD and @ngayKT";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ngayBD", ngayBD);
-            command.Parameters.AddWithValue("@ngayKT", ngayKT);
+            command.Parameters.AddWithValue("@ngayBD", ngayBD.Date);
+            command.Parameters.AddWithValue("@ngayKT", ngayKT.Date);
             object result = command.ExecuteScalar();
             if (result != null)
             {
@@ -164,8 +165,8 @@ namespace XayDungUDBanCaPhe
             connection.Open();
             string query = "select count(maHD) from hoaDon where  ngayLapHD between @ngayBD and @ngayKT";
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@ngayBD", ngayBD);
-            command.Parameters.AddWithValue("@ngayKT", ngayKT);
+            command.Parameters.AddWithValue("@ngayBD", ngayBD.Date);
+            command.Parameters.AddWithValue("@ngayKT", ngayKT.Date);
             object result = command.ExecuteScalar();
             if (result != DBNull.Value && result != null)
             {
@@ -186,11 +187,11 @@ namespace XayDungUDBanCaPhe
 
         private void btn_Xoa_Click(object sender, EventArgs e)
         {
-            DateTime ngayTK = dtNgayBD.Value;
+            DateTime ngayTK = dtNgayTK.Value;
             DanhSachThongKe ds = new DanhSachThongKe(connection);
             ds.Xoa(ngayTK);
             //loadTK();
-            dtNgayBD.Value = DateTime.Now;
+            dtNgayTK.Value = DateTime.Now;
             txtSLHĐ.Clear();
             txtTongTienTK.Clear();
         }
